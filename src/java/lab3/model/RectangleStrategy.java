@@ -8,6 +8,7 @@ public class RectangleStrategy implements HeightWidthAreable {
     private double width;
     private double height;
     
+    @Override
     public final double getArea(final String width, final String height)
         throws IllegalArgumentException, NumberFormatException{
         if(width == null || height == null){
