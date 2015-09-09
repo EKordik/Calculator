@@ -1,0 +1,23 @@
+/* 
+    Created on : Sep 9, 2015, 2:52:49 PM
+    Author     : emmakordik
+*/
+
+body{
+    background-color: #999;
+}
+
+h1{
+    color: #000;
+    text-align: center;
+    font-size: 3em;
+}
+.container{
+    padding: 30px;
+    width: 300px;
+    height: 400px;
+    float: left;
+    background-color: #fff;
+    margin: 10px;
+    box-shadow: 2px 2px 2px #666;
+}
