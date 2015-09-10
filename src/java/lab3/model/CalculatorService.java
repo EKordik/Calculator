@@ -6,9 +6,9 @@ package lab3.model;
  * @author emmakordik
  */
 public class CalculatorService {
-    HeightWidthAreable recCal = new RectangleStrategy();
-    HeightWidthAreable triCal = new TriangleStrategy();
-    circleAreable circleCal = new CircleStrategy();
+    private HeightWidthAreable recCal = new RectangleStrategy();
+    private HeightWidthAreable triCal = new TriangleStrategy();
+    private CircleAreable circleCal = new CircleStrategy();
     
     public final double getRectangleArea(final String width, final String height){
         return recCal.getArea(width, height);

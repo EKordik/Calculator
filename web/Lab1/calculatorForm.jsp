@@ -14,7 +14,7 @@
     <body>
         <h1>Rectangle Area Calculator</h1>
         
-        <form id="recCal" name="recCal" method="POST" action="..\calculator">
+        <form id="recCal" name="recCal" method="POST" action="../calculator">
             <label for="height">Height:</label>
             <input type="text" id="height" name="height"><br>
             <label for="width">Width: </label>

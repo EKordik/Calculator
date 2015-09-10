@@ -2,8 +2,6 @@ package lab3.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,34 +30,33 @@ public class AreaCalController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         CalculatorService service = new CalculatorService();
-        NumberFormat format = new DecimalFormat("#0.00");
         String calcType = request.getParameter("calcType");
         
         if(calcType == null){
             calcType = "";
         }
         
-        if(calcType.equals("rectangle")){
+        if(calcType.equalsIgnoreCase("rectangle")){
             String width = request.getParameter("width");
             String height = request.getParameter("height");
             Double recArea = service.getRectangleArea(height, width);
             request.setAttribute("height", height);
             request.setAttribute("width", width);
-            request.setAttribute("recArea", format.format(recArea));
+            request.setAttribute("recArea", recArea);
             
-        }else if(calcType.equals("circle")){
+        }else if(calcType.equalsIgnoreCase("circle")){
             String radius = request.getParameter("radius");
             Double circleArea = service.getCircleArea(radius);
-            request.setAttribute("circleArea", format.format(circleArea));
+            request.setAttribute("circleArea", circleArea);
             request.setAttribute("radius", radius);
             
-        }else if(calcType.equals("triangle")){
+        }else if(calcType.equalsIgnoreCase("triangle")){
             String base = request.getParameter("base");
             String height = request.getParameter("triHeight");
             Double triArea = service.getTriangleArea(height, base);
             request.setAttribute("base", base);
             request.setAttribute("triHeight", height);
-            request.setAttribute("triArea", format.format(triArea));
+            request.setAttribute("triArea", triArea);
         }else{
             
         }

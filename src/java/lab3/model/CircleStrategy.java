@@ -4,7 +4,7 @@ package lab3.model;
  *
  * @author emmakordik
  */
-public class CircleStrategy implements circleAreable {
+public class CircleStrategy implements CircleAreable {
     private double radius;
     private double area;
     

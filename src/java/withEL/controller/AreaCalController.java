@@ -1,6 +1,5 @@
 package withEL.controller;
 
-import lab3.controller.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
@@ -46,12 +45,12 @@ public class AreaCalController extends HttpServlet {
             Double recArea = service.getRectangleArea(height, width);
             request.setAttribute("height", height);
             request.setAttribute("width", width);
-            request.setAttribute("recArea", format.format(recArea));
+            request.setAttribute("recArea", recArea);
             
         }else if(calcType.equals("circle")){
             String radius = request.getParameter("radius");
             Double circleArea = service.getCircleArea(radius);
-            request.setAttribute("circleArea", format.format(circleArea));
+            request.setAttribute("circleArea", circleArea);
             request.setAttribute("radius", radius);
             
         }else if(calcType.equals("triangle")){
@@ -60,7 +59,7 @@ public class AreaCalController extends HttpServlet {
             Double triArea = service.getTriangleArea(height, base);
             request.setAttribute("base", base);
             request.setAttribute("triHeight", height);
-            request.setAttribute("triArea", format.format(triArea));
+            request.setAttribute("triArea", triArea);
         }else{
             
         }

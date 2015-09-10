@@ -4,6 +4,8 @@
     Author     : emmakordik
 --%>
 
+<%@page import="java.text.NumberFormat"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +15,8 @@
         <title>Area Calculator</title>
     </head>
     <body>
+        <%! NumberFormat format = new DecimalFormat("#0.00");
+        %>
         <h1>Area Calculator</h1>
         
         <div id="rectangleCal" class="container">
@@ -32,8 +36,10 @@
                 String areaRec = "";
                 String height = "";
                 String width ="";
+                
                 if(objRec != null){
-                    areaRec = (String)objRec;
+                    Double temp = (Double)objRec;
+                    areaRec = format.format(temp);
                 }
                 
                 if(objHeight != null && objWidth != null){
@@ -60,7 +66,8 @@
                 String radius = "";
                 
                 if(objCircle != null){
-                    areaCircle = (String)objCircle;
+                    Double temp = (Double)objCircle;
+                    areaCircle = format.format(temp);
                 }
                 
                 if(objRadius != null){
@@ -79,7 +86,7 @@
                 <input type="text" id="base" name="base"><br>
                 <label for="triHeight">Height:</label>
                 <input type="text" id="triHeight" name="triHeight"><br>
-                <input type="submit" id="circleSubmit" name="circleSubmit">
+                <input type="submit" id="triSubmit" name="triSubmit">
             </form>
              <% Object objTri = request.getAttribute("triArea");
                 String areaTri = "";
@@ -89,7 +96,8 @@
                 String base ="";
                 
                 if(objTri != null){
-                    areaTri = (String)objTri;
+                    Double temp = (Double)objTri;
+                    areaTri = format.format(temp);
                 }
                 
                 if(objBase != null && objTriHeight != null){

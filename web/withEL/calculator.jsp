@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,7 +31,9 @@
 
             <p>Height of the rectangle: ${height}<br>
             Width of the rectangle: ${width}</p>
-            <p>The area of the rectangle is: ${recArea}</p>
+            <p>The area of the rectangle is: 
+                <fmt:formatNumber type="number" value="${recArea}" pattern="#0.00" />
+            </p>
         </div>
         
         <div id="circleCal" class="container">
@@ -41,7 +46,8 @@
             </form>
              
             <p>The radius is: ${radius}</p>
-            <p>The area of the circle is: ${circleArea}</p>
+            <p>The area of the circle is: 
+                <fmt:formatNumber type="number" value="${circleArea}" pattern="#0.00"/></p>
         </div>
         
         <div id="triCal" class="container">
@@ -57,7 +63,8 @@
      
             <p>The base is: ${base}<br>
                 The height is: ${triHeight}</p>
-            <p>The area of the triangle is: ${triArea}</p>
+            <p>The area of the triangle is:
+                <fmt:formatNumber type="number" value="${triArea}" pattern="#0.00"/></p>
         </div>
     </body>
 </html>
