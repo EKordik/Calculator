@@ -18,7 +18,7 @@ import lab3.model.CalculatorService;
  */
 @WebServlet(name = "AreaCalController", urlPatterns = {"/areaELCalculator"})
 public class AreaCalController extends HttpServlet {
-    private final static String DESTINATION_VIEW = "withEL/calculator.jsp";
+    private final static String DESTINATION_VIEW = "/withEL/calculator.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
