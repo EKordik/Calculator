@@ -38,9 +38,15 @@
                             <label for="width">Width: </label>
                             <input type="text" id="width" name="width"> 
                         </div>
-                        <input type="submit" id="recSubmit" name="recSubmit" class="btn btn-success">
+                        <c:catch var="exception">
+                            <input type="submit" id="recSubmit" name="recSubmit" class="btn btn-success">
+                        </c:catch>
                     </form>
                          
+                    <c:if test="${exception != null}" >
+                        <p>Something went wrong.</p>
+                    </c:if>
+                        
                         <p>Height of the rectangle: ${height}<br>
                         Width of the rectangle: ${width}</p>
                         <p>The area of the rectangle is: 

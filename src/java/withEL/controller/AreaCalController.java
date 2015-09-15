@@ -18,7 +18,7 @@ import lab3.model.CalculatorService;
  */
 @WebServlet(name = "AreaCalController", urlPatterns = {"/areaELCalculator"})
 public class AreaCalController extends HttpServlet {
-    private final static String DESTINATION_VIEW = "/withEL/calculator.jsp";
+    private final static String DESTINATION_VIEW = "withEL/calculator.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -29,7 +29,7 @@ public class AreaCalController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, IllegalArgumentException, NumberFormatException {
         response.setContentType("text/html;charset=UTF-8");
         CalculatorService service = new CalculatorService();
         NumberFormat format = new DecimalFormat("#0.00");
@@ -94,7 +94,7 @@ public class AreaCalController extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, IllegalArgumentException, NumberFormatException {
         processRequest(request, response);
     }
 

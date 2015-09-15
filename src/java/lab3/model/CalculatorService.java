@@ -10,7 +10,8 @@ public class CalculatorService {
     private HeightWidthAreable triCal = new TriangleStrategy();
     private CircleAreable circleCal = new CircleStrategy();
     
-    public final double getRectangleArea(final String width, final String height){
+    public final double getRectangleArea(final String width, final String height) 
+            throws IllegalArgumentException, NumberFormatException{
         return recCal.getArea(width, height);
     }   
     
